@@ -1,0 +1,4 @@
+{
+  "name": "console-scripts",
+  "module": "./prebuild.ts"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "@app-fe/console",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prebuild": "del src/.settings && ts-node --project ./scripts/tsconfig.json -r ./node_modules/tsconfig-paths/register ./scripts/prebuild",
+    "lang": "langm start --folder locales --name @app-fe/console",
+    "start": "pm2 start --name @app-fe/console npm -- run dev",
+    "stop": "pm2 delete @app-fe/console",
+    "dev": "pnpm prebuild && vite",
+    "build": "pnpm prebuild && tsc && vite build",
+    "preview": "pnpm build && vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "@app-fe/console-storage": "workspace:^0.0.0",
+    "@app-fe/global-resources": "workspace:^0.0.0",
+    "@app-fe/listener": "workspace:^0.0.0",
+    "@app-fe/remote-adapter": "workspace:^0.0.0",
+    "antd": "4.24.3",
+    "i18next": "22.0.6",
+    "mobx": "6.7.0",
+    "mobx-react-lite": "3.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "12.0.0",
+    "react-router-dom": "^6.4.3"
+  },
+  "devDependencies": {
+    "@app-fe/console-types": "workspace:^1.0.0",
+    "@types/node": "18.11.5",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "@types/systemjs": "6.13.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "del-cli": "5.0.0",
+    "tsconfig-paths": "4.1.0",
+    "tslib": "2.3.1",
+    "typescript": "4.9.3",
+    "vite": "^3.2.3",
+    "vite-plugin-externals": "^0.5.1"
+  }
+}

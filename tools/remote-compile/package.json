@@ -1,0 +1,45 @@
+{
+  "name": "@app-fe/remote-compile",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "main": "bin/index.js",
+  "scripts": {
+    "clean": "del bin",
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "bin": {
+    "remote-compile": "./bin/index.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@types/express-serve-static-core": "^4.17.31",
+    "@types/node": "18.11.5",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
+    "colored-progress-bar-webpack-plugin": "^1.2.4",
+    "commander": "^9.0.0",
+    "css-loader": "^6.7.2",
+    "mini-css-extract-plugin": "^2.7.0",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.3",
+    "recursive-copy": "^2.0.14",
+    "simple-progress-webpack-plugin": "^2.0.0",
+    "systemjs-webpack-interop": "^2.3.7",
+    "ts-loader": "^9.2.8",
+    "typescript": "4.9.3",
+    "webpack": "^5.70.0",
+    "webpack-dev-server": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "devDependencies": {
+    "del-cli": "5.0.0"
+  }
+}

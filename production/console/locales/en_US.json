@@ -1,0 +1,10 @@
+{
+  "LOGIN.PASSWORD": "Password",
+  "LOGIN.PASSWORD_ERROR_EMPTY": "Please input your password!",
+  "LOGIN.PASSWORD_PLACEHOLDER": "password",
+  "LOGIN.SUBMIT": "Login",
+  "LOGIN.USER_NAME": "name",
+  "LOGIN.USER_NAME_ERROR_EMPTY": "Please input your username!",
+  "LOGIN.USER_NAME_PLACEHOLDER": "username/email",
+  "NONE": "none"
+}

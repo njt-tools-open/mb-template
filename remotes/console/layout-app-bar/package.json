@@ -1,0 +1,63 @@
+{
+  "name": "@app-fe/console-layout-app-bar",
+  "remoteManifest": {
+    "displayName": "应用程序栏",
+    "type": "layout",
+    "production": "console",
+    "icon": "icon.svg",
+    "port": 8010
+  },
+  "version": "1.0.0",
+  "description": "应用顶部程序栏",
+  "author": "xiaoYown",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lang": "langm start --folder locales --name @app-fe/console-layout-app-bar",
+    "start": "pm2 start --name @app-fe/console-layout-app-bar npm -- run dev",
+    "stop": "pm2 delete @app-fe/console-layout-app-bar",
+    "dev": "remote-compile start",
+    "clean": "del dist",
+    "preview": "remote-compile preview",
+    "build": "remote-compile build"
+  },
+  "devDependencies": {
+    "@app-fe/console-sdk": "workspace:^0.0.0",
+    "@app-fe/console-types": "workspace:^1.0.0",
+    "@app-fe/remote-compile": "workspace:^1.0.0",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.18.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/jest": "^27.0.2",
+    "@types/node": "18.11.5",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "babel-loader": "^8.3.0",
+    "commitizen": "^4.2.4",
+    "del-cli": "5.0.0",
+    "typescript": "4.9.3"
+  },
+  "browserslist": [
+    "chrome >= 30",
+    "firefox >= 30",
+    "safari >= 7",
+    "ios >= 9",
+    "android >=4"
+  ],
+  "dependencies": {
+    "@app-fe/global-resources": "workspace:^0.0.0",
+    "@app-fe/remote-adapter": "workspace:^0.0.0",
+    "antd": "4.24.3",
+    "i18next": "22.0.6",
+    "mobx": "6.7.0",
+    "mobx-react-lite": "3.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "12.0.0"
+  }
+}

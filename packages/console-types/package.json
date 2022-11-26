@@ -1,0 +1,11 @@
+{
+  "name": "@app-fe/console-types",
+  "version": "1.0.0",
+  "description": "",
+  "types": "./index.d.ts",
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "*.d.ts"
+  ]
+}

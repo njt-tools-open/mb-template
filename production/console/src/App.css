@@ -1,0 +1,27 @@
+.root-app {
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+.root-layout-nav {}
+
+.root-layout-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.root-app-bar {
+}
+
+.root-nav-bar {
+  height: 100%;
+}
+
+.root-module-container {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding-left: 12px;
+}

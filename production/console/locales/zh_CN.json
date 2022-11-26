@@ -1,0 +1,10 @@
+{
+  "LOGIN.PASSWORD": "密码",
+  "LOGIN.PASSWORD_ERROR_EMPTY": "密码不能为空",
+  "LOGIN.PASSWORD_PLACEHOLDER": "密码",
+  "LOGIN.SUBMIT": "登录",
+  "LOGIN.USER_NAME": "用户名",
+  "LOGIN.USER_NAME_ERROR_EMPTY": "用户名不能为空",
+  "LOGIN.USER_NAME_PLACEHOLDER": "用户名称/邮箱",
+  "NONE": "空"
+}

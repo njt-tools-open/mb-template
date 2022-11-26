@@ -1,0 +1,15 @@
+{
+  "name": "@app-fe/console-module-fn",
+  "remoteManifest": {
+    "displayName": {
+      "none": "",
+      "zh_CN": "功能",
+      "en_US": "Module"
+    },
+    "type": "module",
+    "production": "console",
+    "icon": "icon.svg",
+    "port": 8012,
+    "index": 2
+  }
+}

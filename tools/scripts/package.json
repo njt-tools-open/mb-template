@@ -1,0 +1,24 @@
+{
+  "name": "@app-fe/scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "private": true,
+  "author": "xiaoYown",
+  "scripts": {
+    "clean": "echo 'clean success'",
+    "build": "echo 'build success'"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.5",
+    "tslib": "2.3.1",
+    "typescript": "4.9.3"
+  },
+  "dependencies": {
+    "commander": "8.2.0",
+    "ejs": "^3.1.8",
+    "inquirer": "^8.2.4",
+    "shelljs": "^0.8.5",
+    "tsconfig-paths": "4.1.0"
+  }
+}

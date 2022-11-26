@@ -1,0 +1,32 @@
+{
+  "name": "@app-fe/console-sdk",
+  "version": "0.0.0",
+  "description": "console sdk",
+  "author": "xiaoYown <qzy09101018@sina.com>",
+  "license": "ISC",
+  "bundle": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "lib-cli dev",
+    "build": "lib-cli build && pnpm move",
+    "move": "fse copy ./lib/index.js ../../production/console/public/sdk/console-sdk.js"
+  },
+  "devDependencies": {
+    "@app-fe/console-types": "workspace:^1.0.0",
+    "@atao60/fse-cli": "^0.1.7",
+    "@babel/preset-env": "^7.16.11",
+    "@njt-tools-open/lib-cli": "0.3.6",
+    "@types/node": "^16.11.2",
+    "tslib": "^2.3.1",
+    "typescript": "4.9.3"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  }
+}
