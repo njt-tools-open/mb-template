@@ -35,7 +35,7 @@ importers:
       '@njt-tools-open/lib-cli': 0.3.6
       '@types/node': ^16.11.2
       tslib: ^2.3.1
-      typescript: ^4.4.4
+      typescript: 4.9.3
     devDependencies:
       '@app-fe/console-types': link:../console-types
       '@atao60/fse-cli': 0.1.7
@@ -60,7 +60,10 @@ importers:
       typescript: 4.9.3
 
   packages/console-types:
-    specifiers: {}
+    specifiers:
+      '@app-fe/types': workspace:^1.0.0
+    dependencies:
+      '@app-fe/types': link:../types
 
   packages/global-resources:
     specifiers:
@@ -135,6 +138,9 @@ importers:
       tslib: 2.3.1
       typescript: 4.9.3
 
+  packages/types:
+    specifiers: {}
+
   production/console:
     specifiers:
       '@ant-design/icons': ^4.8.0
@@ -185,6 +191,55 @@ importers:
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       del-cli: 5.0.0
       tsconfig-paths: 4.1.0
+      tslib: 2.3.1
+      typescript: 4.9.3
+      vite: 3.2.4_@types+node@18.11.5
+      vite-plugin-externals: 0.5.1_vite@3.2.4
+
+  production/manage:
+    specifiers:
+      '@ant-design/icons': ^4.8.0
+      '@app-fe/global-resources': workspace:^0.0.0
+      '@app-fe/listener': workspace:^0.0.0
+      '@app-fe/remote-adapter': workspace:^0.0.0
+      '@app-fe/types': workspace:^1.0.0
+      '@types/node': 18.11.5
+      '@types/react': 18.0.24
+      '@types/react-dom': 18.0.8
+      '@types/systemjs': 6.13.0
+      '@vitejs/plugin-react': ^2.2.0
+      antd: 4.24.3
+      i18next: 22.0.6
+      mobx: 6.7.0
+      mobx-react-lite: 3.4.0
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-i18next: 12.0.0
+      react-router-dom: ^6.4.3
+      tslib: 2.3.1
+      typescript: 4.9.3
+      vite: ^3.2.3
+      vite-plugin-externals: ^0.5.1
+    dependencies:
+      '@ant-design/icons': 4.8.0_biqbaboplfbrettd7655fr4n2y
+      '@app-fe/global-resources': link:../../packages/global-resources
+      '@app-fe/listener': link:../../packages/listener
+      '@app-fe/remote-adapter': link:../../packages/remote-adapter
+      antd: 4.24.3_biqbaboplfbrettd7655fr4n2y
+      i18next: 22.0.6
+      mobx: 6.7.0
+      mobx-react-lite: 3.4.0_jofyzmwkboewm6mjrhi25mngky
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-i18next: 12.0.0_nger6pvrp5hnzeykouhwqmsdti
+      react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
+    devDependencies:
+      '@app-fe/types': link:../../packages/types
+      '@types/node': 18.11.5
+      '@types/react': 18.0.24
+      '@types/react-dom': 18.0.8
+      '@types/systemjs': 6.13.0
+      '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       tslib: 2.3.1
       typescript: 4.9.3
       vite: 3.2.4_@types+node@18.11.5
@@ -260,6 +315,7 @@ importers:
       '@app-fe/global-resources': workspace:^0.0.0
       '@app-fe/remote-adapter': workspace:^0.0.0
       '@app-fe/remote-compile': workspace:^1.0.0
+      '@app-fe/types': workspace:^1.0.0
       '@babel/core': ^7.17.8
       '@babel/plugin-proposal-class-properties': ^7.16.7
       '@babel/plugin-proposal-object-rest-spread': ^7.17.3
@@ -298,6 +354,7 @@ importers:
       '@app-fe/console-sdk': link:../../../packages/console-sdk
       '@app-fe/console-types': link:../../../packages/console-types
       '@app-fe/remote-compile': link:../../../tools/remote-compile
+      '@app-fe/types': link:../../../packages/types
       '@babel/core': 7.20.2
       '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.20.2
       '@babel/plugin-proposal-object-rest-spread': 7.20.2_@babel+core@7.20.2

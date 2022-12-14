@@ -1,7 +1,7 @@
 import { Menu } from 'antd';
 import { Layout } from 'antd';
 
-import { RouteModel } from '@app-fe/console-types';
+import { RouteModel } from '@app-fe/types';
 
 import i18n from './translation';
 

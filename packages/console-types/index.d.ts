@@ -1,18 +1,4 @@
-export interface RemoteInfoModel {
-  name: string;
-  port: number;
-  version: string;
-}
-
-export declare interface RouteModel {
-  name: string;
-  path: string;
-  version: string;
-  port: number;
-  index: number;
-  displayName: Record<string, string>;
-  children?: RouteModel[];
-}
+import { RouteModel } from '@app-fe/types';
 
 /** console js bridge */
 export declare interface ConsoleJsBridge {

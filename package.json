@@ -7,6 +7,7 @@
     "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
     "new": "pnpm scripts create",
     "prebuild": "pnpm build:packages && pnpm build:tools",
+    "start:manage": "pnpm --filter './production/manage' start",
     "start:console": "pnpm start:console-remote && pnpm start:console-prod",
     "start:console-prod": "pnpm --filter './production/console' start",
     "start:console-remote": "pnpm --filter './remotes/console/**' start",

@@ -14,10 +14,12 @@ class RemoteEntry extends RemoteAdapter {
   };
 
   private beforeRender = () => {
-    window.consoleSDK.onLangChange(this.handleLangChange);
+    // some thing global listen
+    // listen handleLangChange
   };
   private beforeUnmout = () => {
-    window.consoleSDK.offLangChange(this.handleLangChange);
+    // remote global listen
+    // unlisten handleLangChange
   };
 
   /** 默认使用样式 */

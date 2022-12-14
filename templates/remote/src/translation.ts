@@ -21,7 +21,7 @@ const i18n = i18next.createInstance();
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: window.consoleSDK.getLang(),
+  lng: 'zh_CN',
   interpolation: {
     escapeValue: false,
   },
