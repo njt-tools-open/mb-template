@@ -35,9 +35,9 @@
     "systemjs-webpack-interop": "^2.3.7",
     "ts-loader": "^9.2.8",
     "typescript": "4.9.3",
-    "webpack": "^5.70.0",
-    "webpack-dev-server": "^4.9.2",
-    "webpack-merge": "^5.8.0"
+    "webpack": "5.70.0",
+    "webpack-dev-server": "4.11.1",
+    "webpack-merge": "5.8.0"
   },
   "devDependencies": {
     "del-cli": "5.0.0"
