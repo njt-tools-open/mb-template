@@ -5,7 +5,7 @@
     "type": "layout",
     "production": "console",
     "icon": "icon.svg",
-    "port": 8010
+    "port": 8110
   },
   "version": "1.0.0",
   "description": "应用顶部程序栏",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@app-fe/console-sdk": "workspace:^0.0.0",
     "@app-fe/console-types": "workspace:^1.0.0",
+    "@app-fe/global-resources": "workspace:^0.0.0",
     "@app-fe/remote-compile": "workspace:^1.0.0",
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",

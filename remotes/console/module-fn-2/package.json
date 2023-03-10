@@ -9,7 +9,7 @@
     "type": "module",
     "production": "console",
     "icon": "icon.svg",
-    "port": 8014,
+    "port": 8114,
     "parentName": "@app-fe/console-module-fn",
     "index": 2
   },

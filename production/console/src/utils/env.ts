@@ -1,4 +1,4 @@
-import { RemoteInfoModel } from '@app-fe/console-types';
+import { RemoteInfoModel } from '@app-fe/types';
 
 const isDev = import.meta.env.DEV;
 

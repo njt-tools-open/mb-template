@@ -5,7 +5,7 @@
     "type": "layout",
     "production": "console",
     "icon": "icon.svg",
-    "port": "8011"
+    "port": 8111
   },
   "version": "1.0.0",
   "description": "导航栏",

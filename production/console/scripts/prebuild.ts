@@ -7,7 +7,7 @@ import {
   writeFileSync,
 } from 'fs';
 
-import { RouteModel } from '@app-fe/console-types';
+import { RouteModel } from '@app-fe/types';
 
 const transformJson = (filename: string): any => {
   return JSON.parse(readFileSync(filename, { encoding: 'utf8' }));

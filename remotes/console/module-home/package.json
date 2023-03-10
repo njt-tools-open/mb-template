@@ -9,7 +9,7 @@
     "type": "module",
     "production": "console",
     "icon": "icon.svg",
-    "port": 8015,
+    "port": 8115,
     "index": 1
   },
   "version": "1.0.0",
