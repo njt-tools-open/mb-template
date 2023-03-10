@@ -9,15 +9,16 @@ import {
 } from './.settings/layout';
 
 import ModeulContainer from './components/module-loader';
-import { RemoteInfoModel } from '@app-fe/console-types';
+import { RemoteInfoModel } from '@app-fe/types';
 import LoginSection from './components/login';
 
-import './App.css';
 import { userStore } from './store/user';
+
+import './App.css';
 
 const layoutMap = new Map<string, RemoteInfoModel>();
 
-LAYOUT_LIST.forEach(item => {
+LAYOUT_LIST.forEach((item: any) => {
   layoutMap.set(item.name, item);
 });
 

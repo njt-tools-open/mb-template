@@ -19,7 +19,8 @@
       "@types/react",
       "@types/react-dom",
       "@types/systemjs",
-      "@app-fe/console-types"
+      "@app-fe/console-types",
+      "@app-fe/types"
     ]
   },
   "include": ["src", "@types", "typings/*.d.ts"],

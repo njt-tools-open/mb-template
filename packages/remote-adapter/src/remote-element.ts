@@ -1,3 +1,5 @@
+import { RESET_CSS_PATH } from '@app-fe/global-resources';
+
 export const HTML_TAG_NAME = 'remote-element';
 
 export interface CreateStaticELementOption {
@@ -18,7 +20,9 @@ export enum ATTRIBUTES {
 }
 
 export class HTMLRemoteElement extends HTMLElement {
-  linkElements: (HTMLLinkElement | HTMLScriptElement)[] = [];
+  shadow: ShadowRoot | null;
+  baseElements: HTMLElement[] = [];
+  linkElements: HTMLElement[] = [];
   remoteContainer: HTMLDivElement;
 
   constructor() {
@@ -39,12 +43,33 @@ export class HTMLRemoteElement extends HTMLElement {
     `;
     shadow.appendChild(styleContainer);
 
+    this.shadow = shadow;
     this.remoteContainer = remoteContainer;
+
+    this.prepareBaseResources();
   }
 
   static get observedAttributes() {
     return [ATTRIBUTES.LINK_RESOURCES];
   }
+
+  prepareBaseResources = () => {
+    const elements = [
+      {
+        tag: 'link',
+        attributes: {
+          rel: 'stylesheet',
+          href: RESET_CSS_PATH,
+        },
+      },
+    ];
+
+    this.baseElements = elements.map(item => {
+      const element = createElement(item);
+      this.shadowRoot?.insertBefore(element, this.remoteContainer);
+      return element;
+    });
+  };
 
   updateLinkResources = () => {
     const linkResources = this.getAttribute(ATTRIBUTES.LINK_RESOURCES);

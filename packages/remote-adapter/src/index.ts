@@ -23,6 +23,7 @@ class RemoteAdapter {
   private remoteElement?: HTMLRemoteElement;
   private parentContainer?: HTMLDivElement;
   private listener?: Listener;
+  public shadowRoot?: ShadowRoot | null;
 
   private beforeMount = () => {
     let resources = this.getStaticResources();
@@ -57,6 +58,7 @@ class RemoteAdapter {
 
     this.parentContainer?.appendChild(this.remoteElement);
     this.container = this.remoteElement.remoteContainer;
+    this.shadowRoot = this.remoteElement.shadowRoot;
 
     this.onMounted();
   };

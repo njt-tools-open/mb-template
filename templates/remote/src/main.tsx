@@ -1,6 +1,5 @@
 import { createRoot, Root } from 'react-dom/client';
 
-import { ANTD_CSS_PATH } from '@app-fe/global-resources';
 import RemoteAdapter from '@app-fe/remote-adapter';
 
 import i18n from './translation';
@@ -25,13 +24,6 @@ class RemoteEntry extends RemoteAdapter {
   /** 默认使用样式 */
   override getStaticResources = () => {
     return [
-      {
-        tag: 'link',
-        attributes: {
-          rel: 'stylesheet',
-          href: ANTD_CSS_PATH,
-        },
-      },
       {
         tag: 'link',
         attributes: {

@@ -1,5 +1,5 @@
 /** antd 基础样式 */
-export const ANTD_CSS_PATH = 'libs/antd/antd.min.css';
+export const RESET_CSS_PATH = 'libs/antd/reset.css';
 
 /** react 资源 */
 export const REACT_JS_PATH = 'libs/react/react.min.js';

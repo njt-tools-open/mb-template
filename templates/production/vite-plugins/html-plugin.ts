@@ -1,5 +1,5 @@
 import {
-  ANTD_CSS_PATH,
+  RESET_CSS_PATH,
   ANTD_JS_PATH,
   DAYJS_PATH,
   I18NEXT_JS_PATH,
@@ -23,7 +23,7 @@ const baseSlotTags: TagModel[] = [
     tag: 'link',
     attributes: {
       rel: 'stylesheet',
-      href: `${ANTD_CSS_PATH}`,
+      href: `${RESET_CSS_PATH}`,
     },
   },
   {

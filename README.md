@@ -55,7 +55,7 @@ pnpm preview:console-remote
 ```json
 {
   "dependencies": {
-    "antd": "4.24.3",
+    "antd": "5.3.0",
     "mobx": "6.7.0",
     "mobx-react-lite": "3.4.0",
     "react": "18.2.0",

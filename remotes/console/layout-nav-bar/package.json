@@ -5,7 +5,7 @@
     "type": "layout",
     "production": "console",
     "icon": "icon.svg",
-    "port": "8011"
+    "port": 8111
   },
   "version": "1.0.0",
   "description": "导航栏",
@@ -23,8 +23,8 @@
   "devDependencies": {
     "@app-fe/console-sdk": "workspace:^0.0.0",
     "@app-fe/console-types": "workspace:^1.0.0",
-    "@app-fe/types": "workspace:^1.0.0",
     "@app-fe/remote-compile": "workspace:^1.0.0",
+    "@app-fe/types": "workspace:^1.0.0",
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
@@ -51,9 +51,9 @@
     "android >=4"
   ],
   "dependencies": {
-    "@app-fe/global-resources": "workspace:^0.0.0",
+    "@ant-design/cssinjs": "1.6.1",
     "@app-fe/remote-adapter": "workspace:^0.0.0",
-    "antd": "4.24.3",
+    "antd": "5.3.0",
     "i18next": "22.0.6",
     "mobx": "6.7.0",
     "mobx-react-lite": "3.4.0",
