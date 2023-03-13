@@ -32,9 +32,6 @@ const baseSlotTags: TagModel[] = [
       src: `${SYSTEM_PATH}`,
     },
   },
-];
-/** 生产嵌入标签 */
-const prodSlotTags: TagModel[] = [
   {
     tag: 'script',
     attributes: {
@@ -72,8 +69,9 @@ const prodSlotTags: TagModel[] = [
     },
   },
 ];
+
 /** systemjs 模块适配 */
-const prodSystemMap = [
+const systemMap = [
   {
     name: 'React',
     src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=React`,
@@ -110,14 +108,14 @@ const createTagContent = (tags: TagModel[]) => {
     .join('\n');
 };
 
-const createProdSystemMapContent = () => {
+const createSystemMapContent = () => {
   return `<script type="systemjs-importmap">
   {
     "imports": {
-      ${prodSystemMap
+      ${systemMap
     .map(({ name, src }, index) => {
       const prefix = index === 0 ? '' : '      ';
-      const suffix = index < prodSystemMap.length - 1 ? ',' : '';
+      const suffix = index < systemMap.length - 1 ? ',' : '';
       return `${prefix}"${name}": "${src}"${suffix}`;
     })
     .join('\n')}
@@ -130,20 +128,12 @@ const createProdSystemMapContent = () => {
 export const htmlPlugin = () => ({
   name: 'html-transform',
   transformIndexHtml(html: string) {
-    const isDev = process.env.NODE_ENV === 'development';
     let _html = html;
 
     const content = [
-      createTagContent([...baseSlotTags, ...(isDev ? [] : prodSlotTags)]),
+      createTagContent([...baseSlotTags]),
+      createSystemMapContent(),
     ];
-    if (!isDev) {
-      content.push(createProdSystemMapContent());
-    }
-
-    // const content = [
-    //   createTagContent([...baseSlotTags, ...prodSlotTags]),
-    //   createProdSystemMapContent(),
-    // ];
 
     _html = _html.replace(headStr, content.join('\n'));
 

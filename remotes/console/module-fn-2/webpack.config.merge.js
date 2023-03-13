@@ -1,5 +1,3 @@
-const isProd = process.env.NODE_ENV === 'production';
-
 module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
@@ -31,13 +29,11 @@ module.exports = {
       },
     ],
   },
-  externals: isProd
-    ? {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        i18next: 'i18next',
-        'react-i18next': 'ReactI18next',
-        antd: 'antd',
-      }
-    : undefined,
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    i18next: 'i18next',
+    'react-i18next': 'ReactI18next',
+    antd: 'antd',
+  },
 };
