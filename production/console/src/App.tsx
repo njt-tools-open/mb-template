@@ -9,7 +9,7 @@ import {
 } from './.settings/layout';
 
 import ModeulContainer from './components/module-loader';
-import { RemoteInfoModel } from '@app-fe/console-types';
+import { RemoteInfoModel } from '@app-fe/types';
 import LoginSection from './components/login';
 
 import './App.css';
