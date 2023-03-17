@@ -23,7 +23,9 @@
     "format": "pnpm format:prettier && pnpm format:eslint",
     "format:prettier": "prettier --write --list-different --cache \"**/*.{ts,tsx,less,json,yml,yaml,md}\"",
     "format:eslint": "eslint --ext .ts,.tsx --cache --quiet --fix ./",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "changeset": "npx changeset",
+    "changeset:version": "npx changeset version"
   },
   "keywords": [],
   "author": "xiaoYown",

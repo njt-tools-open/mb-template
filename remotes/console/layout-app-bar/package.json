@@ -11,7 +11,7 @@
     "icon": "icon.svg",
     "port": 8110
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "应用顶部程序栏",
   "author": "xiaoYown",
   "scripts": {
@@ -25,10 +25,10 @@
     "build": "remote-compile build"
   },
   "devDependencies": {
-    "@app-fe/console-sdk": "workspace:^0.0.0",
-    "@app-fe/console-types": "workspace:^1.0.0",
-    "@app-fe/global-resources": "workspace:^0.0.0",
-    "@app-fe/remote-compile": "workspace:^1.0.0",
+    "@app-fe/console-sdk": "workspace:^0.0.1",
+    "@app-fe/console-types": "workspace:^1.0.1",
+    "@app-fe/global-resources": "workspace:^0.0.1",
+    "@app-fe/remote-compile": "workspace:^1.0.1",
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
@@ -55,8 +55,8 @@
     "android >=4"
   ],
   "dependencies": {
-    "@app-fe/global-resources": "workspace:^0.0.0",
-    "@app-fe/remote-adapter": "workspace:^0.0.0",
+    "@app-fe/global-resources": "workspace:^0.0.1",
+    "@app-fe/remote-adapter": "workspace:^0.0.1",
     "antd": "4.24.8",
     "i18next": "22.0.6",
     "mobx": "6.7.0",

@@ -1,6 +1,6 @@
 {
   "name": "@app-fe/console-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "types": "./index.d.ts",
   "author": "",
@@ -9,6 +9,6 @@
     "*.d.ts"
   ],
   "dependencies": {
-    "@app-fe/types": "workspace:^1.0.0"
+    "@app-fe/types": "workspace:^1.0.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@app-fe/console-sdk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "console sdk",
   "author": "xiaoYown <qzy09101018@sina.com>",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "move": "fse copy ./lib/index.js ../../production/console/public/sdk/console-sdk.js"
   },
   "devDependencies": {
-    "@app-fe/console-types": "workspace:^1.0.0",
+    "@app-fe/console-types": "workspace:^1.0.1",
     "@atao60/fse-cli": "^0.1.7",
     "@babel/preset-env": "^7.16.11",
     "@njt-tools-open/lib-cli": "0.3.6",
