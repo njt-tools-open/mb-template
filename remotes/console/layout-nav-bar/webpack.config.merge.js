@@ -30,10 +30,10 @@ module.exports = {
     ],
   },
   externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    i18next: 'i18next',
-    'react-i18next': 'ReactI18next',
-    antd: 'antd',
+    react: 'react@18.2.0',
+    'react-dom': 'react-dom@18.2.0',
+    i18next: 'i18next@22.0.6',
+    'react-i18next': 'react-i18next@12.0.0',
+    antd: 'antd@4.24.8',
   },
 };

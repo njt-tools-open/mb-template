@@ -6,10 +6,9 @@
       "zh_CN": "功能",
       "en_US": "Module"
     },
-    "type": "module",
+    "type": "module-node",
     "production": "console",
     "icon": "icon.svg",
-    "port": 8112,
     "index": 2
   }
 }

@@ -1,16 +1,14 @@
-import {
-  ANTD_CSS_PATH,
-  ANTD_JS_PATH,
-  DAYJS_PATH,
-  I18NEXT_JS_PATH,
-  REACT_DOM_JS_PATH,
-  REACT_I18NEXT_JS_PATH,
-  REACT_JS_PATH,
-  SYSTEM_PATH,
-  SYSTEM_WINDOW_CONNECTOR_PATH,
-} from '@app-fe/global-resources';
+import { readFileSync } from 'fs';
+import * as path from 'path';
+import { ANTD_CSS_PATH, SYSTEM_PATH } from '@app-fe/global-resources';
 
 const headStr = '<slot data-content="production-slot" />';
+
+const libConfig = JSON.parse(
+  readFileSync(path.resolve('./public/libs/libs.config.json'), {
+    encoding: 'utf8',
+  })
+);
 
 interface TagModel {
   tag: string;
@@ -32,66 +30,6 @@ const baseSlotTags: TagModel[] = [
       src: `${SYSTEM_PATH}`,
     },
   },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${DAYJS_PATH}`,
-    },
-  },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${REACT_JS_PATH}`,
-    },
-  },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${REACT_DOM_JS_PATH}`,
-    },
-  },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${I18NEXT_JS_PATH}`,
-    },
-  },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${REACT_I18NEXT_JS_PATH}`,
-    },
-  },
-  {
-    tag: 'script',
-    attributes: {
-      src: `./${ANTD_JS_PATH}`,
-    },
-  },
-];
-
-/** systemjs 模块适配 */
-const systemMap = [
-  {
-    name: 'React',
-    src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=React`,
-  },
-  {
-    name: 'ReactDOM',
-    src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=ReactDOM`,
-  },
-  {
-    name: 'i18next',
-    src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=i18next`,
-  },
-  {
-    name: 'ReactI18next',
-    src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=ReactI18next`,
-  },
-  {
-    name: 'antd',
-    src: `./${SYSTEM_WINDOW_CONNECTOR_PATH}?connect=antd`,
-  },
 ];
 
 const createTagContent = (tags: TagModel[]) => {
@@ -112,11 +50,15 @@ const createSystemMapContent = () => {
   return `<script type="systemjs-importmap">
   {
     "imports": {
-      ${systemMap
-    .map(({ name, src }, index) => {
+      ${libConfig.packages
+    .map(({ name, version, file }, index) => {
       const prefix = index === 0 ? '' : '      ';
-      const suffix = index < systemMap.length - 1 ? ',' : '';
-      return `${prefix}"${name}": "${src}"${suffix}`;
+      const suffix = index < libConfig.packages.length - 1 ? ',' : '';
+      const filePath = `./libs/${name}/${version}/${file}`.replace(
+        /\${process\.env\.NODE_ENV}/,
+        process.env.NODE_ENV
+      );
+      return `${prefix}"${name}@${version}": "${filePath}"${suffix}`;
     })
     .join('\n')}
     }

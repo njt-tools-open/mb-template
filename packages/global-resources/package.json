@@ -22,7 +22,7 @@
     "build": "tsc && node postbuild.js"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.20.2",
     "@types/node": "18.11.5",
     "del-cli": "5.0.0",
     "tslib": "2.3.1",
@@ -32,12 +32,13 @@
     "@babel/core": "^7.17.8"
   },
   "dependencies": {
+    "@babel/core": "^7.21.3",
     "antd": "4.24.8",
     "dayjs": "1.11.6",
     "i18next": "22.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "12.0.0",
-    "systemjs": "6.13.0"
+    "systemjs": "6.14.0"
   }
 }

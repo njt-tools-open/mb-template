@@ -60,7 +60,7 @@ pnpm preview:console-remote
     "mobx-react-lite": "3.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "systemjs": "6.13.0"
+    "systemjs": "6.14.0"
   },
   "devDependencies": {
     "tslib": "2.3.1",

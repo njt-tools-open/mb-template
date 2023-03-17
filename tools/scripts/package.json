@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "commander": "8.2.0",
-    "ejs": "^3.1.8",
-    "inquirer": "^8.2.4",
+    "ejs": "^3.1.9",
+    "inquirer": "^8.2.5",
     "shelljs": "^0.8.5",
     "tsconfig-paths": "4.1.0"
   }

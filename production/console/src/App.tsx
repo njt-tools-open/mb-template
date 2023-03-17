@@ -84,7 +84,7 @@ const App = observer(() => {
   };
 
   useEffect(() => {
-    renderAppBar();
+    // renderAppBar();
     renderNavBar();
 
     return () => {
@@ -103,7 +103,7 @@ const App = observer(() => {
           </div>
           <div className="root-layout-section">
             <div className="root-app-bar" ref={appbar}></div>
-            <ModeulContainer />
+            {/* <ModeulContainer /> */}
           </div>
         </div>
       ) : (

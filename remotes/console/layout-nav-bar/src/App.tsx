@@ -1,5 +1,4 @@
-import { Menu } from 'antd';
-import { Layout } from 'antd';
+import { Menu,Layout  } from 'antd';
 
 import { RouteModel } from '@app-fe/types';
 

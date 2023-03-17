@@ -1,4 +1,5 @@
 import * as i18next from 'i18next';
+import React from 'react';
 import { initReactI18next } from 'react-i18next';
 
 import none from '../locales/none.json';
@@ -16,7 +17,7 @@ const resources = {
     translation: en_US,
   },
 };
-
+console.log(React);
 const i18n = i18next.createInstance();
 
 i18n.use(initReactI18next).init({

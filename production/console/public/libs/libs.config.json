@@ -1,0 +1,34 @@
+{
+  "packages": [
+    {
+      "name": "react",
+      "file": "react.${process.env.NODE_ENV}.js",
+      "version": "18.2.0"
+    },
+    {
+      "name": "react-dom",
+      "file": "react-dom.${process.env.NODE_ENV}.js",
+      "version": "18.2.0"
+    },
+    {
+      "name": "i18next",
+      "file": "i18next.js",
+      "version": "22.0.6"
+    },
+    {
+      "name": "react-i18next",
+      "file": "react-i18next.js",
+      "version": "12.0.0"
+    },
+    {
+      "name": "dayjs",
+      "file": "dayjs.js",
+      "version": "1.11.6"
+    },
+    {
+      "name": "antd",
+      "file": "antd-with-locales.js",
+      "version": "4.24.8"
+    }
+  ]
+}

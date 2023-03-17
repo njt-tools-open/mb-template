@@ -18,7 +18,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-env": "^7.20.2",
     "@types/node": "18.11.5",
     "del-cli": "5.0.0",
     "tslib": "2.3.1",
@@ -26,5 +26,8 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.17.8"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.3"
   }
 }
