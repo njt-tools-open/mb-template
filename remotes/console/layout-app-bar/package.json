@@ -1,7 +1,11 @@
 {
   "name": "@app-fe/console-layout-app-bar",
   "remoteManifest": {
-    "displayName": "应用程序栏",
+    "displayName": {
+      "none": "",
+      "zh_CN": "应用程序栏",
+      "en_US": "Appbar"
+    },
     "type": "layout",
     "production": "console",
     "icon": "icon.svg",

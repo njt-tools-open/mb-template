@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { routes } from '../../.settings/routes';
+import { baseStore } from '../../store/base';
 import { getRemotePath } from '../../utils/env';
 import { useNavigator } from '../../utils/navigator';
 
-const getRouteInfo = (path: string, routers = routes): any => {
+const getRouteInfo = (path: string, routers = baseStore.routes): any => {
   for (let i = 0; i < routers.length; i++) {
     if (routers[i].path === path) {
       return routers[i];
@@ -25,7 +25,7 @@ const ModuleLoader = () => {
   const [moduleAdapter, setModuleAdapter] = useState<any>();
 
   const renderModule = () => {
-    const moduleInfo = getRouteInfo(location.pathname, routes);
+    const moduleInfo = getRouteInfo(location.pathname, baseStore.routes);
 
     if (!moduleInfo) {
       moduleAdapter?.unmount();

@@ -22,6 +22,5 @@ if (isProd) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/console/',
   plugins,
 });

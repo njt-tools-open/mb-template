@@ -1,19 +1,12 @@
+import * as fs from 'fs';
 import path from 'path';
-import {
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  statSync,
-  writeFileSync,
-} from 'fs';
+import { readdirSync, readFileSync, statSync } from 'fs';
 
 import { RouteModel } from '@app-fe/types';
 
 const transformJson = (filename: string): any => {
   return JSON.parse(readFileSync(filename, { encoding: 'utf8' }));
 };
-
-const dist = path.join(__dirname, '../src/.settings');
 
 const productionName = transformJson(
   path.join(__dirname, '../package.json')
@@ -25,68 +18,41 @@ const remotesFolder = path.join(
 );
 
 const atRemote = (name: string) => path.join(remotesFolder, name);
-const atdist = (name: string) => path.join(dist, name);
-
-/** 转换 package name 为 Parscal 命名 */
-const transfromPkgName = (name: string) => {
-  return name
-    .replace(/.+\//, '')
-    .replace(/[a-z]/g, s => s.toUpperCase())
-    .replace(/-/g, '_');
-};
 
 /** 收集远程文件 */
-const collectRemotes = (type: 'layout' | 'module') => {
+const collectRemotes = (types: ('layout' | 'module' | 'module-node')[]) => {
   const packages = readdirSync(remotesFolder).filter(folder => {
     return (
       statSync(atRemote(folder)).isDirectory() &&
-      transformJson(`${atRemote(folder)}/package.json`).remoteManifest.type ===
-        type
+      types.includes(
+        transformJson(`${atRemote(folder)}/package.json`).remoteManifest.type
+      )
     );
   });
 
   return packages;
 };
 
-/** 生成布局文件 */
-const createLayoutFile = () => {
-  const packages = collectRemotes('layout');
+const generateLayout = () => {
+  const packages = collectRemotes(['layout']);
+  const layouts = {};
 
-  const packageInfoList = packages.map(pkg => {
+  packages.forEach(pkg => {
     const { name, version, remoteManifest } = transformJson(
       `${atRemote(pkg)}/package.json`
     );
-    return {
-      name,
-      version,
-      displayName: remoteManifest.displayName,
-      port: remoteManifest.port,
-    };
+
+    Object.assign(layouts, {
+      [name]: {
+        name,
+        version,
+        displayName: remoteManifest.displayName,
+        port: remoteManifest.port,
+      },
+    });
   });
 
-  const content = `${packageInfoList
-    .map(pkg => {
-      return `
-/** ${pkg.displayName} */
-export const ${transfromPkgName(pkg.name)} = '${pkg.name}';`;
-    })
-    .join('\n')}
-
-/** 布局组件 */
-export const LAYOUT_LIST = [
-  ${packageInfoList
-    .map(pkg => {
-      return `{
-    name: ${transfromPkgName(pkg.name)},
-    version: '${pkg.version}',
-    port: ${pkg.port},
-  },`;
-    })
-    .join('\n')}
-];
-  `;
-
-  writeFileSync(atdist('layout.ts'), content);
+  return layouts;
 };
 
 interface RoutePkgInfo {
@@ -128,9 +94,8 @@ const transformRoutes = (
   return routes.sort((a, b) => a.index - b.index);
 };
 
-/** 生成路由文件 */
-const createRoutesFile = () => {
-  const packages = collectRemotes('module').map(pkg => {
+const generateRoutes = () => {
+  const packages = collectRemotes(['module', 'module-node']).map(pkg => {
     const { name, version, remoteManifest } = transformJson(
       `${atRemote(pkg)}/package.json`
     );
@@ -144,19 +109,27 @@ const createRoutesFile = () => {
       index: remoteManifest.index as number,
     };
   });
+
   const routes = transformRoutes(packages);
-  const content = `
-export const routes = ${JSON.stringify(routes, null, 2)}
-  `;
-  writeFileSync(atdist('routes.ts'), content);
+
+  return routes;
+};
+
+const createProductionManifestFile = () => {
+  const content = {
+    ...generateLayout(),
+    routes: generateRoutes(),
+  };
+
+  fs.writeFileSync(
+    path.join(__dirname, '../public/production-manifest.json'),
+    JSON.stringify(content, null, 2)
+  );
 };
 
 /** 预构建文件 */
 const prebuild = () => {
-  mkdirSync(dist);
-
-  createLayoutFile();
-  createRoutesFile();
+  createProductionManifestFile();
 
   process.exit(0);
 };

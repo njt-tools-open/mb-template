@@ -1,7 +1,11 @@
 {
   "name": "@app-fe/console-layout-nav-bar",
   "remoteManifest": {
-    "displayName": "导航栏",
+    "displayName": {
+      "none": "",
+      "zh_CN": "导航栏",
+      "en_US": "Navbar"
+    },
     "type": "layout",
     "production": "console",
     "icon": "icon.svg",

@@ -2,11 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import { getRemoteJs, getRemotePath } from './utils/env';
-import {
-  CONSOLE_LAYOUT_APP_BAR,
-  CONSOLE_LAYOUT_NAV_BAR,
-  LAYOUT_LIST,
-} from './.settings/layout';
 
 import ModeulContainer from './components/module-loader';
 import { RemoteInfoModel } from '@app-fe/types';
@@ -14,12 +9,11 @@ import LoginSection from './components/login';
 
 import './App.css';
 import { userStore } from './store/user';
-
-const layoutMap = new Map<string, RemoteInfoModel>();
-
-LAYOUT_LIST.forEach(item => {
-  layoutMap.set(item.name, item);
-});
+import {
+  baseStore,
+  CONSOLE_LAYOUT_APP_BAR,
+  CONSOLE_LAYOUT_NAV_BAR,
+} from './store/base';
 
 const App = observer(() => {
   const appbar = useRef(null);
@@ -30,7 +24,7 @@ const App = observer(() => {
   const renderAppBar = () => {
     if (!appbar.current) return;
 
-    const barInfo = layoutMap.get(CONSOLE_LAYOUT_APP_BAR) as RemoteInfoModel;
+    const barInfo = baseStore[CONSOLE_LAYOUT_APP_BAR] as RemoteInfoModel;
     const publicPath = getRemotePath(barInfo);
     const mainUrl = getRemoteJs(barInfo);
 
@@ -58,7 +52,7 @@ const App = observer(() => {
   const renderNavBar = () => {
     if (!navbar.current) return;
 
-    const barInfo = layoutMap.get(CONSOLE_LAYOUT_NAV_BAR) as RemoteInfoModel;
+    const barInfo = baseStore[CONSOLE_LAYOUT_NAV_BAR] as RemoteInfoModel;
     const publicPath = getRemotePath(barInfo);
     const mainUrl = getRemoteJs(barInfo);
 

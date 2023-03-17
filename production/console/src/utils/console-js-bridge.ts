@@ -1,7 +1,7 @@
 import i18n from '../translation';
-import { routes } from '../.settings/routes';
 import { BridgeEvent, BRIDGE_NAVIGATE_TO } from './listeners';
 import { userStore } from '../store/user';
+import { baseStore } from '../store/base';
 
 const getAppBaseInfo = (): any => {};
 
@@ -37,7 +37,7 @@ const getQuery = () => {
   return {};
 };
 const getRoutes = () => {
-  return routes;
+  return baseStore.routes;
 };
 const fetch = (_options: any) => {};
 
