@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
     "new": "pnpm scripts create",
     "prebuild": "pnpm build:packages && pnpm build:tools",
@@ -22,14 +23,15 @@
     "build:tools": "pnpm --filter './tools/**' clean && pnpm --filter './tools/**' build",
     "format": "pnpm format:prettier && pnpm format:eslint",
     "format:prettier": "prettier --write --list-different --cache \"**/*.{ts,tsx,less,json,yml,yaml,md}\"",
-    "format:eslint": "eslint --ext .ts,.tsx --cache --quiet --fix ./",
+    "format:eslint": "eslint --ext .ts,.tsx ./ --cache --quiet --fix",
     "commit": "git-cz",
-    "changeset": "npx changeset",
-    "changeset:version": "npx changeset version"
+    "changeset": "changeset add",
+    "changeset:version": "changeset version"
   },
   "keywords": [],
   "author": "xiaoYown",
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
@@ -46,8 +48,8 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "prettier": "2.7.1",
-    "typescript": "4.9.3"
+    "prettier": "2.8.4",
+    "typescript": "4.8.4"
   },
   "gitHooks": {
     "pre-commit": "lint-staged --diff"

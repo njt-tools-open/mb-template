@@ -113,12 +113,12 @@ const createSystemMapContent = () => {
   {
     "imports": {
       ${systemMap
-    .map(({ name, src }, index) => {
-      const prefix = index === 0 ? '' : '      ';
-      const suffix = index < systemMap.length - 1 ? ',' : '';
-      return `${prefix}"${name}": "${src}"${suffix}`;
-    })
-    .join('\n')}
+        .map(({ name, src }, index) => {
+          const prefix = index === 0 ? '' : '      ';
+          const suffix = index < systemMap.length - 1 ? ',' : '';
+          return `${prefix}"${name}": "${src}"${suffix}`;
+        })
+        .join('\n')}
     }
   }
 </script>

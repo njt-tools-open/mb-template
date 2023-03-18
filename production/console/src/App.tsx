@@ -107,6 +107,4 @@ const App = observer(() => {
   );
 });
 
-console.log(window);
-
 export default App;

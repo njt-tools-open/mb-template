@@ -64,7 +64,7 @@ pnpm preview:console-remote
   },
   "devDependencies": {
     "tslib": "2.3.1",
-    "typescript": "4.9.3"
+    "typescript": "4.8.4"
   }
 }
 ```
