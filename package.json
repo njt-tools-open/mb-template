@@ -51,13 +51,9 @@
     "prettier": "2.8.4",
     "typescript": "4.8.4"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged --diff"
-  },
   "lint-staged": {
     "**/*.ts?(x)": [
-      "npm run format",
-      "git add"
+      "npm run format"
     ]
   },
   "config": {
