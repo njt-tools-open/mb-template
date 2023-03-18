@@ -25,6 +25,7 @@
     "format:prettier": "prettier --write --list-different --cache \"**/*.{ts,tsx,less,json,yml,yaml,md}\"",
     "format:eslint": "eslint --ext .ts,.tsx ./ --cache --quiet --fix",
     "commit": "git-cz",
+    "changeset:pre": "npx changeset pre enter next",
     "changeset": "changeset add",
     "changeset:version": "changeset version"
   },

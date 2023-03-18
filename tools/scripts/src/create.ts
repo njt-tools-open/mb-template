@@ -1,5 +1,6 @@
 import path from 'path';
-import { folderCopy, getAllRemotes, getAuthor } from './tools';
+import { writeFileSync } from 'fs';
+import { folderCopy, getAllRemotes, getAuthor, getPkgContent } from './tools';
 
 interface CreateOptions {
   template: string;
@@ -27,7 +28,7 @@ const createProduction = (options: CreateOptions) => {
 };
 
 /** 创建远程模块 */
-const createRemoteModule = (options: CreateOptions) => {
+const createRemoteModule = async (options: CreateOptions) => {
   const { name, type, template, production } = options;
   const author = getAuthor();
   const tempPath = path.resolve(`./templates/${template}`);
@@ -45,7 +46,13 @@ const createRemoteModule = (options: CreateOptions) => {
       .map(item => parseInt(item.remoteManifest.port, 10))
       .sort((a, b) => b - a)[0] ?? 8010) + 1;
 
-  folderCopy(tempPath, targetPath, { ...options, author, port });
+  await folderCopy(tempPath, targetPath, { ...options, author, port });
+
+  const pkgPath = path.join(targetPath, 'package.json');
+  const pkgContent = getPkgContent(pkgPath);
+  pkgContent.remoteManifest.port = port;
+
+  writeFileSync(pkgPath, JSON.stringify(pkgContent, null, 2));
 };
 
 export const create = (options: CreateOptions) => {

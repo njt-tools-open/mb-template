@@ -9,7 +9,7 @@
     "type": "<%= type %>",
     "production": "<%= production %>",
     "icon": "icon.svg",
-    "port": <%= port %>
+    "port": "<%= port %>"
   },
   "version": "1.0.0",
   "description": "<%= production %>-<%= type %>-<%= name %>",

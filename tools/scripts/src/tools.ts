@@ -11,6 +11,10 @@ import shell from 'shelljs';
 
 const ejs = require('ejs');
 
+export const getPkgContent = (pkgPath: string) => {
+  return JSON.parse(readFileSync(pkgPath, { encoding: 'utf8' }));
+};
+
 export const getAuthor = () => {
   const res = shell.exec('git config user.name', { silent: true });
 
