@@ -25,7 +25,9 @@ const getDependencyReleaseLine = async (changesets, dependenciesUpdated) => {
   const changesetLinks = changesets.map(
     changeset =>
       `- Updated dependencies${
-        changeset.commit ? ` [${changeset.commit}]` : ''
+        changeset.commit
+          ? `[${changeset.commit}](https://github.com/njt-tools-open/mb-template/commit/${changeset.commit}): `
+          : ''
       }`
   );
   const updatedDependenciesList = dependenciesUpdated.map(
