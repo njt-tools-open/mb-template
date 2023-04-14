@@ -1,5 +1,5 @@
 /*!
- * @app-fe/console-sdk - v0.0.0
+ * @app-fe/console-sdk - v0.0.1
  * @app-fe/console-sdk is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
