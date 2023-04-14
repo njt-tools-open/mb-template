@@ -5,7 +5,10 @@ export interface CreateStaticELementOption {
   attributes: Record<string, string>;
 }
 
-const createElement = ({ tag, attributes }: CreateStaticELementOption) => {
+const createElement = ({
+  tag,
+  attributes,
+}: CreateStaticELementOption): HTMLElement => {
   const element = document.createElement(tag);
   for (const key in attributes) {
     element.setAttribute(key, attributes[key]);
@@ -20,6 +23,7 @@ export enum ATTRIBUTES {
 export class HTMLRemoteElement extends HTMLElement {
   linkElements: (HTMLLinkElement | HTMLScriptElement)[] = [];
   remoteContainer: HTMLDivElement;
+  loadEvent: CustomEvent;
 
   constructor() {
     super();
@@ -40,6 +44,11 @@ export class HTMLRemoteElement extends HTMLElement {
     shadow.appendChild(styleContainer);
 
     this.remoteContainer = remoteContainer;
+
+    this.loadEvent = new CustomEvent('load', {
+      bubbles: true,
+      cancelable: false,
+    });
   }
 
   static get observedAttributes() {
@@ -60,6 +69,17 @@ export class HTMLRemoteElement extends HTMLElement {
       const element = createElement(item);
       this.shadowRoot?.insertBefore(element, this.remoteContainer);
       return element;
+    });
+    const promises = this.linkElements
+      .filter(item => item.nodeName === 'LINK')
+      .map(item => {
+        return new Promise((resolve, reject) => {
+          item.addEventListener('load', resolve);
+          item.addEventListener('error', reject);
+        });
+      });
+    Promise.all(promises).finally(() => {
+      this.dispatchEvent(this.loadEvent);
     });
   };
 

@@ -58,7 +58,9 @@ class RemoteAdapter {
     this.parentContainer?.appendChild(this.remoteElement);
     this.container = this.remoteElement.remoteContainer;
 
-    this.onMounted();
+    this.remoteElement.addEventListener('load', () => {
+      this.onMounted();
+    });
   };
 
   /** 卸载节点 */
