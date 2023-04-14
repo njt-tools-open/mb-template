@@ -22,6 +22,8 @@ if (isProd) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/<%= name %>/',
   plugins,
+  server: {
+    host: '0.0.0.0',
+  },
 });
