@@ -9,7 +9,7 @@
     "dev": "pnpm prebuild && vite",
     "lang": "langm start --folder locales --name @app-fe/console",
     "preview": "pnpm build && vite preview",
-    "start": "pm2 start --name @app-fe/console npm -- run dev",
+    "start": "pm2 start --name @app-fe/console 'npm run dev'",
     "stop": "pm2 delete @app-fe/console"
   },
   "dependencies": {

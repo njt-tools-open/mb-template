@@ -10,7 +10,7 @@
     "preinstall": "npx only-allow pnpm",
     "lang": "langm start --folder locales --name console-module-fn-2",
     "preview": "remote-compile preview",
-    "start": "pm2 start --name console-module-fn-2 npm -- run dev",
+    "start": "pm2 start --name console-module-fn-2 'npm run dev'",
     "stop": "pm2 delete console-module-fn-2"
   },
   "browserslist": [

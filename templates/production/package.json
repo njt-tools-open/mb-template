@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "lang": "langm start --folder locales --name @app-fe/<%= name %>",
-    "start": "pm2 start --name @app-fe/<%= name %> npm -- run dev",
+    "start": "pm2 start --name @app-fe/<%= name %> 'npm run dev'",
     "stop": "pm2 delete @app-fe/<%= name %>",
     "dev": "vite",
     "build": "tsc && vite build",
