@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { observer } from 'mobx-react-lite';
 
-import { getRemoteJs, getRemotePath } from './utils/env';
-
-import ModeulContainer from './components/module-loader';
 import { RemoteInfoModel } from '@app-fe/types';
-import LoginSection from './components/login';
 
-import './App.css';
-import { userStore } from './store/user';
+import LoginSection from './components/login';
+import ModeulContainer from './components/module-loader';
 import {
-  baseStore,
   CONSOLE_LAYOUT_APP_BAR,
   CONSOLE_LAYOUT_NAV_BAR,
+  baseStore,
 } from './store/base';
+import { userStore } from './store/user';
+import { getRemoteJs, getRemotePath } from './utils/env';
+
+import './App.css';
 
 const App = observer(() => {
   const appbar = useRef(null);

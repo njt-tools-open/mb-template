@@ -1,10 +1,10 @@
-import { createRoot, Root } from 'react-dom/client';
+import { Root, createRoot } from 'react-dom/client';
 
 import { ANTD_CSS_PATH } from '@app-fe/global-resources';
 import RemoteAdapter from '@app-fe/remote-adapter';
 
-import i18n from './translation';
 import App from './App';
+import i18n from './translation';
 
 class RemoteEntry extends RemoteAdapter {
   private root?: Root;

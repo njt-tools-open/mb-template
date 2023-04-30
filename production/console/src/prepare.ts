@@ -1,9 +1,11 @@
 import axios from 'axios';
+
 import { register as registerRemoteAdapter } from '@app-fe/remote-adapter';
+
 import {
-  baseStore,
   CONSOLE_LAYOUT_APP_BAR,
   CONSOLE_LAYOUT_NAV_BAR,
+  baseStore,
 } from './store/base';
 
 const registerRemoteModules = () => {

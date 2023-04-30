@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
+import { Space } from 'antd';
+
 import LangItem from './components/lang';
 import UserItem from './components/user';
 
 import './App.css';
-import { Space } from 'antd';
 
 const App = () => {
   const { t } = useTranslation();

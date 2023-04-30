@@ -1,18 +1,13 @@
 {
   "name": "@app-fe/scripts",
   "version": "1.0.1",
-  "description": "",
-  "main": "src/main.ts",
   "private": true,
+  "description": "",
   "author": "xiaoYown",
+  "main": "src/main.ts",
   "scripts": {
-    "clean": "echo 'clean success'",
-    "build": "echo 'build success'"
-  },
-  "devDependencies": {
-    "@types/node": "18.11.5",
-    "tslib": "2.3.1",
-    "typescript": "4.8.4"
+    "build": "echo 'build success'",
+    "clean": "echo 'clean success'"
   },
   "dependencies": {
     "commander": "8.2.0",
@@ -20,5 +15,10 @@
     "inquirer": "^8.2.4",
     "shelljs": "^0.8.5",
     "tsconfig-paths": "4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.5",
+    "tslib": "2.3.1",
+    "typescript": "4.8.4"
   }
 }

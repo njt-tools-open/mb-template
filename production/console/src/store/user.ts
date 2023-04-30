@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 
 import { getToken, removeToken, setToken } from '@app-fe/console-storage';
 import { UserInfoModel } from '@app-fe/console-types';
+
 import { fetchGetUserInfo } from '../apis/user';
 
 export class UserStore {

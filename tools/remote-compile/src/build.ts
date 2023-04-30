@@ -1,7 +1,5 @@
 import webpack from 'webpack';
 
-const NODE_ENV = 'production';
-
 import {
   CompileConfigOptiosn,
   createManifestFile,
@@ -9,6 +7,8 @@ import {
   getCustomWebpackConfig,
   handlePluginCompileConfig,
 } from './utils';
+
+const NODE_ENV = 'production';
 
 function build(options: CompileConfigOptiosn = {}): Promise<string> {
   return new Promise((resolve, reject) => {

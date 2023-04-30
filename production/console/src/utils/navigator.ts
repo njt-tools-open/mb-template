@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BridgeEvent, BRIDGE_NAVIGATE_TO } from './listeners';
+
+import { BRIDGE_NAVIGATE_TO, BridgeEvent } from './listeners';
 
 export const useNavigator = () => {
   const navigate = useNavigate();

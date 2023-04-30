@@ -2,20 +2,20 @@
   "name": "@app-fe/remote-compile",
   "version": "1.0.1",
   "description": "",
-  "author": "",
   "license": "ISC",
+  "author": "",
   "main": "bin/index.js",
-  "scripts": {
-    "clean": "del bin",
-    "dev": "tsc --watch",
-    "build": "tsc"
-  },
   "bin": {
     "remote-compile": "./bin/index.js"
   },
   "files": [
     "bin"
   ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "del bin",
+    "dev": "tsc --watch"
+  },
   "dependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",

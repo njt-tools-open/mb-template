@@ -1,7 +1,7 @@
-import i18n from '../translation';
-import { BridgeEvent, BRIDGE_NAVIGATE_TO } from './listeners';
-import { userStore } from '../store/user';
 import { baseStore } from '../store/base';
+import { userStore } from '../store/user';
+import i18n from '../translation';
+import { BRIDGE_NAVIGATE_TO, BridgeEvent } from './listeners';
 
 const getAppBaseInfo = (): any => {};
 

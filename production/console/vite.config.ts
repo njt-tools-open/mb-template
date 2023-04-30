@@ -1,5 +1,6 @@
-import { defineConfig, PluginOption } from 'vite';
 import react from '@vitejs/plugin-react';
+
+import { PluginOption, defineConfig } from 'vite';
 import { viteExternalsPlugin } from 'vite-plugin-externals';
 
 import { htmlPlugin } from './vite-plugins/html-plugin';

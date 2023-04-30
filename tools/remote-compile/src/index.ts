@@ -1,9 +1,9 @@
 #!/usr/bin/env node
+import { program } from 'commander';
 import { resolve } from 'path';
 
-import { program } from 'commander';
-import { serve } from './serve';
 import { compile } from './build';
+import { serve } from './serve';
 import { getPackage } from './utils';
 
 function start() {

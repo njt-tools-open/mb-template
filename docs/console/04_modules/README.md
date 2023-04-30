@@ -7,14 +7,14 @@
 ```json
 {
   "name": "@app-fe/<name>",
-  "version": "0.0.0",
   "remoteModule": {
     "displayName": "显示名称",
     "type": "module",
     "icon": "module-icon.svg",
     "adapter": "1.0.0",
     "sdk": "1.0.0"
-  }
+  },
+  "version": "0.0.0"
 }
 ```
 
@@ -22,13 +22,13 @@
 
 ```json
 {
-  "name": "@app-fe/<name>",
-  "version": "0.0.0",
-  "displayName": "显示名称",
-  "type": "module",
-  "icon": "module-icon.svg",
   "adapter": "1.0.0",
-  "sdk": "1.0.0"
+  "displayName": "显示名称",
+  "icon": "module-icon.svg",
+  "name": "@app-fe/<name>",
+  "sdk": "1.0.0",
+  "type": "module",
+  "version": "0.0.0"
 }
 ```
 

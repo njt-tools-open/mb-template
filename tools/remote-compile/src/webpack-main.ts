@@ -1,7 +1,7 @@
-import path, { resolve } from 'path';
+import { readFileSync } from 'fs';
 // import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { readFileSync } from 'fs';
+import path, { resolve } from 'path';
 
 const SystemJSPublicPathWebpackPlugin = require('systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');

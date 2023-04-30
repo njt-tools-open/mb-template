@@ -1,11 +1,11 @@
 import { Listener } from '@app-fe/listener';
 
 import {
-  register,
   ATTRIBUTES,
+  CreateStaticELementOption,
   HTMLRemoteElement,
   HTML_TAG_NAME,
-  CreateStaticELementOption,
+  register,
 } from './remote-element';
 
 export interface RemoteAdapterOptions {

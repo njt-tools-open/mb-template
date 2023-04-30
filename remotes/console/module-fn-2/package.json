@@ -1,30 +1,35 @@
 {
   "name": "@app-fe/console-module-fn-2",
-  "remoteManifest": {
-    "displayName": {
-      "none": "",
-      "zh_CN": "功能 2",
-      "en_US": "Module 2"
-    },
-    "type": "module",
-    "production": "console",
-    "icon": "icon.svg",
-    "port": 8114,
-    "parentName": "@app-fe/console-module-fn",
-    "index": 2
-  },
   "version": "1.0.1",
   "description": "console-module-fn-2",
   "author": "xiaoYown",
   "scripts": {
+    "build": "remote-compile build",
+    "clean": "del dist",
+    "dev": "remote-compile start",
     "preinstall": "npx only-allow pnpm",
     "lang": "langm start --folder locales --name console-module-fn-2",
-    "start": "pm2 start --name console-module-fn-2 npm -- run dev",
-    "stop": "pm2 delete console-module-fn-2",
-    "dev": "remote-compile start",
-    "clean": "del dist",
     "preview": "remote-compile preview",
-    "build": "remote-compile build"
+    "start": "pm2 start --name console-module-fn-2 npm -- run dev",
+    "stop": "pm2 delete console-module-fn-2"
+  },
+  "browserslist": [
+    "chrome >= 30",
+    "firefox >= 30",
+    "safari >= 7",
+    "ios >= 9",
+    "android >=4"
+  ],
+  "dependencies": {
+    "@app-fe/global-resources": "workspace:^0.0.1",
+    "@app-fe/remote-adapter": "workspace:^0.0.1",
+    "antd": "4.24.8",
+    "i18next": "22.0.6",
+    "mobx": "6.7.0",
+    "mobx-react-lite": "3.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "12.0.0"
   },
   "devDependencies": {
     "@app-fe/console-sdk": "workspace:^0.0.1",
@@ -48,22 +53,17 @@
     "del-cli": "5.0.0",
     "typescript": "4.8.4"
   },
-  "browserslist": [
-    "chrome >= 30",
-    "firefox >= 30",
-    "safari >= 7",
-    "ios >= 9",
-    "android >=4"
-  ],
-  "dependencies": {
-    "@app-fe/global-resources": "workspace:^0.0.1",
-    "@app-fe/remote-adapter": "workspace:^0.0.1",
-    "antd": "4.24.8",
-    "i18next": "22.0.6",
-    "mobx": "6.7.0",
-    "mobx-react-lite": "3.4.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-i18next": "12.0.0"
+  "remoteManifest": {
+    "displayName": {
+      "none": "",
+      "zh_CN": "功能 2",
+      "en_US": "Module 2"
+    },
+    "type": "module",
+    "production": "console",
+    "icon": "icon.svg",
+    "port": 8114,
+    "parentName": "@app-fe/console-module-fn",
+    "index": 2
   }
 }

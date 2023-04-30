@@ -1,9 +1,11 @@
-import { Button, Form, Input } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+
 import { useTranslation } from 'react-i18next';
 
-import { userStore } from '../../store/user';
+import { Button, Form, Input } from 'antd';
+
 import { fetchLogin } from '../../apis/user';
+import { userStore } from '../../store/user';
 
 import './index.css';
 

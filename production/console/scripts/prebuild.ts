@@ -1,6 +1,6 @@
 import * as fs from 'fs';
+import { readFileSync, readdirSync, statSync } from 'fs';
 import path from 'path';
-import { readdirSync, readFileSync, statSync } from 'fs';
 
 import { RouteModel } from '@app-fe/types';
 

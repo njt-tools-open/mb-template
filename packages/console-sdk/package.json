@@ -2,9 +2,8 @@
   "name": "@app-fe/console-sdk",
   "version": "0.0.1",
   "description": "console sdk",
-  "author": "xiaoYown <qzy09101018@sina.com>",
   "license": "ISC",
-  "bundle": "lib/index.js",
+  "author": "xiaoYown <qzy09101018@sina.com>",
   "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
@@ -13,8 +12,8 @@
     "lib"
   ],
   "scripts": {
-    "dev": "lib-cli dev",
     "build": "lib-cli build && pnpm move",
+    "dev": "lib-cli dev",
     "move": "fse copy ./lib/index.js ../../production/console/public/sdk/console-sdk.js"
   },
   "devDependencies": {
@@ -28,5 +27,6 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.0.0"
-  }
+  },
+  "bundle": "lib/index.js"
 }

@@ -1,16 +1,16 @@
 {
   "name": "@app-fe/console",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "scripts": {
     "prebuild": "ts-node --project ./scripts/tsconfig.json -r ./node_modules/tsconfig-paths/register ./scripts/prebuild",
-    "lang": "langm start --folder locales --name @app-fe/console",
-    "start": "pm2 start --name @app-fe/console npm -- run dev",
-    "stop": "pm2 delete @app-fe/console",
-    "dev": "pnpm prebuild && vite",
     "build": "pnpm prebuild && tsc && vite build",
-    "preview": "pnpm build && vite preview"
+    "dev": "pnpm prebuild && vite",
+    "lang": "langm start --folder locales --name @app-fe/console",
+    "preview": "pnpm build && vite preview",
+    "start": "pm2 start --name @app-fe/console npm -- run dev",
+    "stop": "pm2 delete @app-fe/console"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",

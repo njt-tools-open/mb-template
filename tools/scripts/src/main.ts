@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-
-import { readdirSync, readFileSync, statSync } from 'fs';
-import path from 'path';
 import { Command } from 'commander';
+import { readFileSync, readdirSync, statSync } from 'fs';
 import inquirer from 'inquirer';
+import path from 'path';
 
 import { create } from './create';
 

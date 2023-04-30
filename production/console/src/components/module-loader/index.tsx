@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
+
 import { baseStore } from '../../store/base';
 import { getRemotePath } from '../../utils/env';
 import { useNavigator } from '../../utils/navigator';

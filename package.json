@@ -2,39 +2,50 @@
   "name": "app-fe",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "author": "xiaoYown",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky install",
-    "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
-    "new": "pnpm scripts create",
-    "prebuild": "pnpm build:packages && pnpm build:tools",
-    "start:manage": "pnpm --filter './production/manage' start",
-    "start:console": "pnpm start:console-remote && pnpm start:console-prod",
-    "start:console-prod": "pnpm --filter './production/console' start",
-    "start:console-remote": "pnpm --filter './remotes/console/**' start",
-    "stop:console": "pnpm stop:console-prod && pnpm stop:console-remote",
-    "stop:console-prod": "pnpm --filter './production/console' stop",
-    "stop:console-remote": "pnpm --filter './remotes/console/**' stop",
-    "preview:console-prod": "pnpm --filter './production/console' preview",
-    "preview:console-remote": "pnpm --filter './remotes/console/**' preview",
     "build:console": "pnpm build:packages && pnpm build:console-prod",
     "build:console-prod": "pnpm --filter './production/**' build",
     "build:packages": "pnpm --filter './packages/**' clean && pnpm --filter './packages/**' build",
     "build:tools": "pnpm --filter './tools/**' clean && pnpm --filter './tools/**' build",
-    "format": "pnpm format:prettier && pnpm format:eslint",
-    "format:prettier": "prettier --write --list-different --cache \"**/*.{ts,tsx,less,json,yml,yaml,md}\"",
-    "format:eslint": "eslint --ext .ts,.tsx ./ --cache --quiet --fix",
-    "commit": "git-cz",
     "bump": "changeset add",
-    "bump:v": "changeset version"
+    "bump:v": "changeset version",
+    "commit": "git-cz",
+    "format": "pnpm format:prettier && pnpm format:eslint",
+    "format:eslint": "eslint --ext .ts,.tsx ./ --cache --quiet --fix",
+    "format:prettier": "prettier --write --list-different --cache \"**/*.{ts,tsx,less,json,yml,yaml,md}\"",
+    "new": "pnpm scripts create",
+    "prebuild": "pnpm build:packages && pnpm build:tools",
+    "prepare": "husky install",
+    "preview:console-prod": "pnpm --filter './production/console' preview",
+    "preview:console-remote": "pnpm --filter './remotes/console/**' preview",
+    "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
+    "start:console": "pnpm start:console-remote && pnpm start:console-prod",
+    "start:console-prod": "pnpm --filter './production/console' start",
+    "start:console-remote": "pnpm --filter './remotes/console/**' start",
+    "start:manage": "pnpm --filter './production/manage' start",
+    "stop:console": "pnpm stop:console-prod && pnpm stop:console-remote",
+    "stop:console-prod": "pnpm --filter './production/console' stop",
+    "stop:console-remote": "pnpm --filter './remotes/console/**' stop"
   },
-  "keywords": [],
-  "author": "xiaoYown",
+  "lint-staged": {
+    "**/*.ts?(x)": [
+      "npm run format"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@commitlint/cz-commitlint": "^17.4.4",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
     "commitizen": "^4.2.4",
@@ -48,16 +59,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "2.8.4",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "prettier-plugin-sort-json": "^1.0.0",
     "typescript": "4.8.4"
-  },
-  "lint-staged": {
-    "**/*.ts?(x)": [
-      "npm run format"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
   }
 }

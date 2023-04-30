@@ -2,19 +2,19 @@
   "name": "notes",
   "version": "1.0.0",
   "description": "docs",
-  "main": "index.js",
-  "scripts": {
-    "serve": "docsify serve -p 3022",
-    "start": "pm2 start --name docsify npm -- run serve"
+  "homepage": "https://github.com/njt-tools-open/njt-tools-open.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/njt-tools-open/njt-tools-open.github.io/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/njt-tools-open/njt-tools-open.github.io"
   },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/njt-tools-open/njt-tools-open.github.io/issues"
-  },
-  "homepage": "https://github.com/njt-tools-open/njt-tools-open.github.io#readme"
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "docsify serve -p 3022",
+    "start": "pm2 start --name docsify npm -- run serve"
+  }
 }

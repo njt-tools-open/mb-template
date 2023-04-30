@@ -2,8 +2,8 @@
   "name": "@app-fe/console-storage",
   "version": "0.0.1",
   "description": "> TODO: description",
-  "author": "xiaoYown <qzy09101018@sina.com>",
   "license": "ISC",
+  "author": "xiaoYown <qzy09101018@sina.com>",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "directories": {
@@ -13,9 +13,9 @@
     "lib"
   ],
   "scripts": {
+    "build": "tsc",
     "clean": "del dist",
-    "dev": "tsc --watch",
-    "build": "tsc"
+    "dev": "tsc --watch"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",

@@ -23,8 +23,8 @@
     "baseUrl": "./",
     "newLine": "lf"
   },
+  "include": ["./"],
   "ts-node": {
     "esm": true
-  },
-  "include": ["./"]
+  }
 }

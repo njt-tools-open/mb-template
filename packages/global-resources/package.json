@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "",
   "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "type": "module",
   "exports": {
     "import": "./lib/index.mjs"
   },
   "module": "lib/index.mjs",
-  "type": "module",
   "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
@@ -18,8 +18,17 @@
     "lib"
   ],
   "scripts": {
-    "clean": "del lib",
-    "build": "tsc && node postbuild.js"
+    "build": "tsc && node postbuild.js",
+    "clean": "del lib"
+  },
+  "dependencies": {
+    "antd": "4.24.8",
+    "dayjs": "1.11.6",
+    "i18next": "22.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "12.0.0",
+    "systemjs": "6.13.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
@@ -30,14 +39,5 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.17.8"
-  },
-  "dependencies": {
-    "antd": "4.24.8",
-    "dayjs": "1.11.6",
-    "i18next": "22.0.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-i18next": "12.0.0",
-    "systemjs": "6.13.0"
   }
 }
