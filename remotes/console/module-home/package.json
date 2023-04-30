@@ -9,9 +9,7 @@
     "dev": "remote-compile start",
     "preinstall": "npx only-allow pnpm",
     "lang": "langm start --folder locales --name console-module-home",
-    "preview": "remote-compile preview",
-    "start": "pm2 start --name console-module-home 'npm run dev'",
-    "stop": "pm2 delete console-module-home"
+    "preview": "remote-compile preview"
   },
   "browserslist": [
     "chrome >= 30",

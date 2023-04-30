@@ -22,13 +22,10 @@
     "preview:console-prod": "pnpm --filter './production/console' preview",
     "preview:console-remote": "pnpm --filter './remotes/console/**' preview",
     "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
-    "start:console": "pnpm start:console-remote && pnpm start:console-prod",
-    "start:console-prod": "pnpm --filter './production/console' start",
-    "start:console-remote": "pnpm --filter './remotes/console/**' start",
-    "start:manage": "pnpm --filter './production/manage' start",
-    "stop:console": "pnpm stop:console-prod && pnpm stop:console-remote",
-    "stop:console-prod": "pnpm --filter './production/console' stop",
-    "stop:console-remote": "pnpm --filter './remotes/console/**' stop"
+    "start:docs": "pm2 start docs.ecosystem.config.js",
+    "start:console": "pm2 start console.ecosystem.config.js",
+    "stop:docs": "pm2 stop docs.ecosystem.config.js",
+    "stop:console": "pm2 stop console.ecosystem.config.js"
   },
   "lint-staged": {
     "**/*.ts?(x)": [
