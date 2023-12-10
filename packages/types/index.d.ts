@@ -12,6 +12,7 @@ declare interface RouteModel {
   index: number;
   displayName: Record<string, string>;
   children?: RouteModel[];
+  icon?: string;
 }
 
 export { RemoteInfoModel, RouteModel };

@@ -6,6 +6,10 @@ const logout = () => {
 const getLang = () => {
   return window.ConsoleJsBridge.getLang();
 };
+/** 获取 antd 语言包 */
+const getAntdUseLang = () => {
+  return window.ConsoleJsBridge.getAntdUseLang();
+};
 /** 设置语言 */
 const setLang = (lng: string) => {
   window.ConsoleJsBridge.setLang(lng);
@@ -30,6 +34,7 @@ const navigateTo = (path: string) => {
 
 const consoleSDK = Object.assign(new Object(null), {
   logout,
+  getAntdUseLang,
   getLang,
   setLang,
   onLangChange,

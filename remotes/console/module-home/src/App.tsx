@@ -11,12 +11,12 @@ const App = () => {
           {themes.map(item => {
             return (
               <Row key={item}>
-                <Col span={8}>{`--soc-blue-${item}`}</Col>
+                <Col span={8}>{`--mb-blue-${item}`}</Col>
                 <Col
                   span={16}
                   style={{
                     height: '100%',
-                    backgroundColor: `var(--soc-blue-${item})`,
+                    backgroundColor: `var(--mb-blue-${item})`,
                   }}
                 >
                   &nbsp;

@@ -1,6 +1,6 @@
 import { baseStore } from '../store/base';
 import { userStore } from '../store/user';
-import i18n from '../translation';
+import i18n, { getAntdLang } from '../translation';
 import { BRIDGE_NAVIGATE_TO, BridgeEvent } from './listeners';
 
 const getAppBaseInfo = (): any => {};
@@ -13,6 +13,10 @@ const getUserInfo = () => {};
 
 const getLang = () => {
   return i18n.language;
+};
+
+const getAntdUseLang = () => {
+  return getAntdLang(i18n.language);
 };
 
 const setLang = (lng: string) => {
@@ -47,6 +51,7 @@ const ConsoleJsBridge = {
   getUserInfo,
   getLang,
   setLang,
+  getAntdUseLang,
   onLangChange,
   offLangChange,
   navigateTo,

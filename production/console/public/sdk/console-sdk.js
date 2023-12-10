@@ -26,6 +26,10 @@ var AppFeConsoleSdk = (function (exports) {
     var getLang = function () {
         return window.ConsoleJsBridge.getLang();
     };
+    /** 获取 antd 语言包 */
+    var getAntdUseLang = function () {
+        return window.ConsoleJsBridge.getAntdUseLang();
+    };
     /** 设置语言 */
     var setLang = function (lng) {
         window.ConsoleJsBridge.setLang(lng);
@@ -48,6 +52,7 @@ var AppFeConsoleSdk = (function (exports) {
     };
     var consoleSDK = Object.assign(new Object(null), {
         logout: logout,
+        getAntdUseLang: getAntdUseLang,
         getLang: getLang,
         setLang: setLang,
         onLangChange: onLangChange,

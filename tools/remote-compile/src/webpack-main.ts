@@ -5,6 +5,9 @@ import path, { resolve } from 'path';
 
 const SystemJSPublicPathWebpackPlugin = require('systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const cssRegex = /\.(css)$/;
 
@@ -22,15 +25,32 @@ export const formatWebpackConfig = (config: PluginCompileConfigModel) => {
       filename: '[name].css',
     }),
     new SimpleProgressWebpackPlugin(),
-    new SystemJSPublicPathWebpackPlugin({
-      // optional: defaults to 1
-      // If you need the webpack public path to "chop off" some of the directories in the current module's url, you can specify a "root directory level". Note that the root directory level is read from right-to-left, with `1` indicating "current directory" and `2` indicating "up one directory":
-      rootDirectoryLevel: 1,
-
-      // ONLY NEEDED FOR WEBPACK 1-4. Not necessary for webpack@5
-      systemjsModuleName: getPackage().name,
-    }),
   ];
+  if (config.analyze) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+      })
+    );
+  } else {
+    plugins.push(
+      new SystemJSPublicPathWebpackPlugin({
+        // optional: defaults to 1
+        // If you need the webpack public path to "chop off" some of the directories in the current module's url, you can specify a "root directory level". Note that the root directory level is read from right-to-left, with `1` indicating "current directory" and `2` indicating "up one directory":
+        rootDirectoryLevel: 1,
+
+        // ONLY NEEDED FOR WEBPACK 1-4. Not necessary for webpack@5
+        systemjsModuleName: getPackage().name,
+      })
+    );
+  }
+  if (isProd) {
+    plugins.push(
+      new CompressionPlugin({
+        threshold: 51200, // 对大于 500kb 的文件进行压缩
+      })
+    );
+  }
   // if (!isProd) {
   //   plugins.push(
   //     new webpack.SourceMapDevToolPlugin({

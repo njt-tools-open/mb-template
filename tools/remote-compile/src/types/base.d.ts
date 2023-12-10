@@ -1,6 +1,7 @@
 declare interface PluginCompileConfigModel {
   mode: 'development' | 'production';
   name: string;
+  analyze?: boolean;
   version: string;
   output: string;
   entry: string;

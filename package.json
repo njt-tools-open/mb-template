@@ -6,8 +6,8 @@
   "author": "xiaoYown",
   "main": "index.js",
   "scripts": {
-    "build:console": "pnpm build:packages && pnpm build:console-prod",
-    "build:console-prod": "pnpm --filter './production/**' build",
+    "build:console": "pnpm --filter './production/console' build",
+    "build:console-remote": "pnpm --filter './remotes/console/**' build",
     "build:packages": "pnpm --filter './packages/**' clean && pnpm --filter './packages/**' build",
     "build:tools": "pnpm --filter './tools/**' clean && pnpm --filter './tools/**' build",
     "bump": "changeset add",
@@ -22,10 +22,11 @@
     "preview:console-prod": "pnpm --filter './production/console' preview",
     "preview:console-remote": "pnpm --filter './remotes/console/**' preview",
     "scripts": "ts-node --project ./tools/scripts/tsconfig.json -r ./tools/scripts/node_modules/tsconfig-paths/register ./tools/scripts",
-    "start:docs": "pm2 start docs.ecosystem.config.js",
     "start:console": "pm2 start console.ecosystem.config.js",
-    "stop:docs": "pm2 stop docs.ecosystem.config.js",
-    "stop:console": "pm2 stop console.ecosystem.config.js"
+    "start:console-prod": "pnpm --filter './production/console' start",
+    "start:docs": "pm2 start docs.ecosystem.config.js",
+    "stop:console": "pm2 stop console.ecosystem.config.js",
+    "stop:docs": "pm2 stop docs.ecosystem.config.js"
   },
   "lint-staged": {
     "**/*.ts?(x)": [

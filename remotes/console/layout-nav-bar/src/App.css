@@ -3,15 +3,36 @@
   box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
 }
 
-.App .ant-layout-sider-trigger {
+.ant-layout-sider-trigger {
   position: absolute;
 }
 
-.App .ant-layout-sider-light {
+.ant-layout-sider-light,
+.ant-layout-sider-dark {
   height: 100%;
 }
 
-.App .ant-layout-sider-children {
+.ant-layout-sider-children {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.menu-icon-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+.menu-icon-space {
+  display: inline-block;
+  vertical-align: middle;
+  width: 8px;
+}
+.menu-icon-wrapper svg {
+  vertical-align: top;
+}
+.ant-menu-item-selected .menu-icon-wrapper path,
+.ant-menu-item-active .menu-icon-wrapper path {
+  fill: var(--mb-blue-base);
 }

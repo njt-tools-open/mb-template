@@ -1,5 +1,7 @@
 import { Root, createRoot } from 'react-dom/client';
 
+import { ConfigProvider } from 'antd';
+
 import { ANTD_CSS_PATH } from '@app-fe/global-resources';
 import RemoteAdapter from '@app-fe/remote-adapter';
 
@@ -34,7 +36,7 @@ class RemoteEntry extends RemoteAdapter {
         tag: 'link',
         attributes: {
           rel: 'stylesheet',
-          href: `${this.publicPath}/main.css`,
+          href: `${this.publicPath}/main.css?v=${process.env.remoteVersion}`,
         },
       },
     ];
@@ -50,7 +52,11 @@ class RemoteEntry extends RemoteAdapter {
 
     const root = createRoot(this.container);
 
-    root.render(<App />);
+    root.render(
+      <ConfigProvider locale={window.consoleSDK.getAntdUseLang()}>
+        <App />
+      </ConfigProvider>
+    );
 
     this.root = root;
   };

@@ -1,3 +1,5 @@
+import { Locale } from 'antd';
+
 import { RouteModel } from '@app-fe/types';
 
 /** console js bridge */
@@ -6,6 +8,7 @@ export declare interface ConsoleJsBridge {
   getAppBaseInfo: () => any;
   logout: () => void;
   /** 国际化 */
+  getAntdUseLang: () => Locale;
   getLang: () => string;
   setLang: (lng: string) => void;
   onLangChange: (fn: (lng: string) => void) => void;
